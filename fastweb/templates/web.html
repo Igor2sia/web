@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Расписание электричек</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+<div class="container">
+    <h1>Расписание электричек</h1>
+    <form method="post" id="scheduleForm">
+        <div class="form-group">
+            <label for="departure">Станция отправления:</label>
+            <input type="text" id="departure" name="departure" required>
+        </div>
+        <div class="form-group">
+            <label for="arrival">Станция прибытия:</label>
+            <input type="text" id="arrival" name="arrival" required>
+        </div>
+        <button type="submit">Показать расписание</button>
+    </form>
+
+    <div id="scheduleResult" class="schedule-result">
+        <!-- Здесь будет отображаться расписание -->
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/index.js') }}"></script>
+</body>
+</html>
